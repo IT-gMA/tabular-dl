@@ -10,6 +10,7 @@ import time
 import typing as ty
 from copy import deepcopy
 from pathlib import Path
+from mock import patch
 
 import numpy as np
 import pynvml
@@ -106,13 +107,16 @@ def load_config(
 
     environment: ty.Dict[str, ty.Any] = {}
     if torch.cuda.is_available():  # type: ignore[code]
-        cvd = os.environ.get('CUDA_VISIBLE_DEVICES')
+
+        with patch.dict('os.environ', {'CUDA_VISIBLE_DEVICES': '0'}):
+            cvd = os.environ.get('CUDA_VISIBLE_DEVICES')
+
         pynvml.nvmlInit()
         environment['devices'] = {
             'CUDA_VISIBLE_DEVICES': cvd,
             'torch.version.cuda': torch.version.cuda,
             'torch.backends.cudnn.version()': torch.backends.cudnn.version(),  # type: ignore[code]
-            'torch.cuda.nccl.version()': torch.cuda.nccl.version(),  # type: ignore[code]
+            #'torch.cuda.nccl.version()': torch.cuda.nccl.version(),  # type: ignore[code]
             'driver': str(pynvml.nvmlSystemGetDriverVersion(), 'utf-8'),
         }
         if cvd:
