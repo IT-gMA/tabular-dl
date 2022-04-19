@@ -1,0 +1,19 @@
+seed = 14
+
+[data]
+normalization = 'quantile'
+path = 'data/california_housing'
+y_policy = 'mean_std'
+
+[model]
+d_layers = [ 100, 473, 178 ]
+dropout = 0.2602387397756024
+
+[training]
+batch_size = 256
+eval_batch_size = 8192
+lr = 0.0010880242882938462
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 8.313101133778734e-05
