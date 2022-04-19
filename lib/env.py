@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
 
-PROJECT_DIR = Path(os.environ['PROJECT_DIR']).absolute().resolve()
+ABSOLUTE_PATH = r"C:\Users\tiend\PycharmProjects\tabular-dl"
+PROJECT_DIR = Path(os.environ[ABSOLUTE_PATH]).absolute().resolve()
 DATA_DIR = PROJECT_DIR / 'data'
 OUTPUT_DIR = PROJECT_DIR / 'output'
 
