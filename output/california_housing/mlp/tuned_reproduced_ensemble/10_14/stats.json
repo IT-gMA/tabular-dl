@@ -1,0 +1,29 @@
+{
+    "dataset": "california_housing",
+    "algorithm": "mlp",
+    "config": {
+        "source": "output\\california_housing\\mlp\\tuned_reproduced",
+        "seeds": [
+            10,
+            11,
+            12,
+            13,
+            14
+        ],
+        "count": 5
+    },
+    "metrics": {
+        "train": {
+            "rmse": 0.42312663168877135,
+            "score": -0.42312663168877135
+        },
+        "val": {
+            "rmse": 0.5024889975294705,
+            "score": -0.5024889975294705
+        },
+        "test": {
+            "rmse": 0.5000528706472562,
+            "score": -0.5000528706472562
+        }
+    }
+}

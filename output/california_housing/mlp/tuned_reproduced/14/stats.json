@@ -1,0 +1,59 @@
+{
+    "dataset": "california_housing",
+    "algorithm": "mlp",
+    "config": {
+        "data": {
+            "normalization": "quantile",
+            "path": "data/california_housing",
+            "y_policy": "mean_std"
+        },
+        "model": {
+            "d_layers": [
+                100,
+                473,
+                178
+            ],
+            "dropout": 0.2602387397756024
+        },
+        "seed": 14,
+        "training": {
+            "batch_size": 256,
+            "eval_batch_size": 8192,
+            "lr": 0.0010880242882938462,
+            "n_epochs": 1000000000,
+            "optimizer": "adamw",
+            "patience": 16,
+            "weight_decay": 8.313101133778734e-05
+        }
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "torch.version.cuda": "10.1",
+            "torch.backends.cudnn.version()": 7604,
+            "driver": "512.15",
+            "0": {
+                "name": "NVIDIA GeForce RTX 2070",
+                "total_memory": 8589934592
+            }
+        }
+    },
+    "epoch_size": 52,
+    "n_parameters": 133224,
+    "best_epoch": 84,
+    "metrics": {
+        "train": {
+            "rmse": 0.4539125530427288,
+            "score": -0.4539125530427288
+        },
+        "val": {
+            "rmse": 0.5213852506020022,
+            "score": -0.5213852506020022
+        },
+        "test": {
+            "rmse": 0.5189590130493438,
+            "score": -0.5189590130493438
+        }
+    },
+    "time": "0:00:24"
+}
