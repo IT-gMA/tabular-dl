@@ -1,0 +1,29 @@
+{
+    "dataset": "bleve",
+    "algorithm": "xgboost_",
+    "config": {
+        "source": "output\\bleve\\xgboost\\default",
+        "seeds": [
+            10,
+            11,
+            12,
+            13,
+            14
+        ],
+        "count": 5
+    },
+    "metrics": {
+        "train": {
+            "rmse": 0.003274737098187358,
+            "score": -0.003274737098187358
+        },
+        "val": {
+            "rmse": 0.05409866546451019,
+            "score": -0.05409866546451019
+        },
+        "test": {
+            "rmse": 0.048272724922623585,
+            "score": -0.048272724922623585
+        }
+    }
+}
