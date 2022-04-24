@@ -167,3 +167,5 @@ output/**/*.*
 .idea
 lib
 main.py
+lib/env.py
+
