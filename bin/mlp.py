@@ -67,6 +67,7 @@ class MLP(nn.Module):
 
 # %%
 args, output = lib.load_config()
+print(args)
 
 # %%
 zero.set_randomness(args['seed'])

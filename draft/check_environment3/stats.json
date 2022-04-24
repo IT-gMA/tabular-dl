@@ -1,0 +1,47 @@
+{
+    "dataset": "bleve",
+    "algorithm": "mlp",
+    "config": {
+        "data": {
+            "normalization": "quantile",
+            "path": "data/bleve",
+            "y_policy": "mean_std"
+        },
+        "model": {
+            "d_layers": [
+                916,
+                247
+            ],
+            "dropout": 0.4151013678232672
+        },
+        "seed": 0,
+        "training": {
+            "batch_size": 1024,
+            "eval_batch_size": 1200,
+            "lr": 0.001304086404538407,
+            "n_epochs": 1000000000,
+            "optimizer": "adamw",
+            "patience": 16,
+            "weight_decay": 0.0001516844843295177
+        }
+    },
+    "environment": {},
+    "epoch_size": 5,
+    "n_parameters": 238655,
+    "best_epoch": 125,
+    "metrics": {
+        "train": {
+            "rmse": 0.032905189933708216,
+            "score": -0.032905189933708216
+        },
+        "val": {
+            "rmse": 0.04198680692716365,
+            "score": -0.04198680692716365
+        },
+        "test": {
+            "rmse": 0.04734346835291299,
+            "score": -0.04734346835291299
+        }
+    },
+    "time": "0:00:09"
+}

@@ -164,3 +164,6 @@ output/**/*.*
 # Other
 .DS_Store
 .vscode/
+.idea
+lib
+main.py
