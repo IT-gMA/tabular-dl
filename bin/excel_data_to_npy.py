@@ -62,8 +62,8 @@ if __name__ == '__main__':
     num_test = 0.15
     ratio = (num_train, num_val, num_test)
     N_train, N_val, N_test, y_train, y_val, y_test = training_split(features, outputs, ratio)
-    print("train {}:{}\nvalidation {}:{}\ntest {}:{}".format(num_train * 100, N_train, num_val * 100, N_val,
-                                                             num_test * 100, N_test))
+    print("train {}:{}\nvalidation {}:{}\ntest {}:{}".format(num_train * 100, len(N_train), num_val * 100, len(N_val),
+                                                             num_test * 100, len(N_test)))
 
     # Save the samples as .npy files
     save_npy(N_train, N_val, N_test, y_train, y_val, y_test)
