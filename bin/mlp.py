@@ -8,6 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import zero
+import torch.optim as optim
 
 import lib
 
@@ -98,6 +99,8 @@ lib.dump_pickle(y_info, output / 'y_info.pickle')
 X = tuple(None if x is None else lib.to_tensors(x) for x in X)
 Y = lib.to_tensors(Y)
 device = lib.get_device()
+print(device)
+
 if device.type != 'cpu':
     X = tuple(None if x is None else {k: v.to(device) for k, v in x.items()} for x in X)
     Y_device = {k: v.to(device) for k, v in Y.items()}
@@ -121,6 +124,8 @@ epoch_size = stats['epoch_size'] = math.ceil(train_size / batch_size)
 #new loss function with mse or mish
 loss_fn = (
     F.mish
+    if D.is_binclass
+    else F.mse_loss
 )
 
 args['model'].setdefault('d_embedding', None)
