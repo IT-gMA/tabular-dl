@@ -11,7 +11,7 @@ dropout = 0.1
 
 [training]
 batch_size = 512
-eval_batch_size = 1200
+eval_batch_size = 256
 lr = 0.1
 n_epochs = 1000000000
 optimizer = 'adamw'
