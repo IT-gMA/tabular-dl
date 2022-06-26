@@ -119,9 +119,9 @@ epoch_size = stats['epoch_size'] = math.ceil(train_size / batch_size)
     else F.mse_loss
 )'''
 #new loss function with mse or mish
-loss_fn = {
+loss_fn = (
     F.mse_loss
-}
+)
 
 args['model'].setdefault('d_embedding', None)
 model = MLP(
