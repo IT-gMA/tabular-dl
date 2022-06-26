@@ -9,50 +9,53 @@
         },
         "model": {
             "d_layers": [
-                916,
-                247
+                12,
+                256,
+                256,
+                256,
+                1
             ],
-            "dropout": 0.4151013678232672
+            "dropout": 0.1
         },
         "seed": 7,
         "training": {
-            "batch_size": 512,
-            "eval_batch_size": 1000,
-            "lr": 6.150734353753627e-05,
-            "n_epochs": 1000000000,
+            "batch_size": 839,
+            "eval_batch_size": 181,
+            "lr": 0.1,
+            "n_epochs": 4195,
             "optimizer": "adamw",
-            "patience": 16,
-            "weight_decay": 1.494554370167576e-05
+            "patience": 50,
+            "weight_decay": 1e-05
         }
     },
     "environment": {
         "devices": {
             "CUDA_VISIBLE_DEVICES": "0",
-            "torch.version.cuda": "10.1",
-            "torch.backends.cudnn.version()": 7604,
-            "driver": "512.15",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "driver": "512.95",
             "0": {
                 "name": "NVIDIA GeForce RTX 2070",
                 "total_memory": 8589934592
             }
         }
     },
-    "epoch_size": 10,
-    "n_parameters": 238655,
-    "best_epoch": 193,
+    "epoch_size": 5,
+    "n_parameters": 135327,
+    "best_epoch": 1,
     "metrics": {
         "train": {
-            "rmse": 0.0690189267962029,
-            "score": -0.0690189267962029
+            "rmse": 0.5090867497574834,
+            "score": -0.5090867497574834
         },
         "val": {
-            "rmse": 0.0678127694594709,
-            "score": -0.0678127694594709
+            "rmse": 0.4928836432870081,
+            "score": -0.4928836432870081
         },
         "test": {
-            "rmse": 0.0747038934590323,
-            "score": -0.0747038934590323
+            "rmse": 0.4349466806200998,
+            "score": -0.4349466806200998
         }
     },
-    "time": "0:00:21"
+    "time": "0:00:03"
 }

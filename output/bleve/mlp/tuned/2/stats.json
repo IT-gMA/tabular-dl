@@ -1,0 +1,61 @@
+{
+    "dataset": "bleve",
+    "algorithm": "mlp",
+    "config": {
+        "data": {
+            "normalization": "quantile",
+            "path": "data/bleve",
+            "y_policy": "mean_std"
+        },
+        "model": {
+            "d_layers": [
+                12,
+                256,
+                256,
+                256,
+                1
+            ],
+            "dropout": 0.1
+        },
+        "seed": 2,
+        "training": {
+            "batch_size": 839,
+            "eval_batch_size": 181,
+            "lr": 0.1,
+            "n_epochs": 4195,
+            "optimizer": "adamw",
+            "patience": 50,
+            "weight_decay": 1e-05
+        }
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "driver": "512.95",
+            "0": {
+                "name": "NVIDIA GeForce RTX 2070",
+                "total_memory": 8589934592
+            }
+        }
+    },
+    "epoch_size": 5,
+    "n_parameters": 135327,
+    "best_epoch": 10,
+    "metrics": {
+        "train": {
+            "rmse": 0.5090257248284047,
+            "score": -0.5090257248284047
+        },
+        "val": {
+            "rmse": 0.49288118787526536,
+            "score": -0.49288118787526536
+        },
+        "test": {
+            "rmse": 0.43492374673112344,
+            "score": -0.43492374673112344
+        }
+    },
+    "time": "0:00:03"
+}
