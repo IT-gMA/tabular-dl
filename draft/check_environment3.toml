@@ -6,13 +6,13 @@ path = 'data/bleve'
 y_policy = 'mean_std'
 
 [model]
-d_layers = [ 916, 247 ]
-dropout = 0.4151013678232672
+d_layers = [ 256, 256, 256]
+dropout = 0.1
 
 [training]
-batch_size = 1024
+batch_size = 512
 eval_batch_size = 1200
-lr = 0.001304086404538407
+lr = 0.1
 n_epochs = 1000000000
 optimizer = 'adamw'
 patience = 16

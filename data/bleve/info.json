@@ -1,0 +1,11 @@
+{
+    "name": "bleve___0",
+    "basename": "bleve",
+    "split": 0,
+    "task_type": "regression",
+    "n_num_features": 10,
+    "n_cat_features": 2,
+    "train_size": 4195,
+    "val_size": 900,
+    "test_size": 899
+}
