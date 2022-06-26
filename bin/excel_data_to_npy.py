@@ -3,8 +3,8 @@ import pandas as pd
 import os
 import sys
 
-EXCEL_DATA = '../BLEVE_data/BLEVE_data_5m.xlsx'  # Given this data has been randomised beforehand
-SAVE_DIR = '../data/bleve_5m'
+EXCEL_DATA = '../BLEVE_data/BLEVE_data_shuffled.xlsx'  # Given this data has been randomised beforehand
+SAVE_DIR = '../data/bleve'
 
 
 def read_and_convert():
@@ -58,8 +58,8 @@ if __name__ == '__main__':
 
     # 70% used for training, 15% for validation and 15% for testing
     num_train = 0.70
-    num_val = 0.15
-    num_test = 0.15
+    num_val = 0.1503
+    num_test = 0.1497
     ratio = (num_train, num_val, num_test)
     N_train, N_val, N_test, y_train, y_val, y_test = training_split(features, outputs, ratio)
     print("train {}:{}\nvalidation {}:{}\ntest {}:{}".format(num_train * 100, len(N_train), num_val * 100, len(N_val),
