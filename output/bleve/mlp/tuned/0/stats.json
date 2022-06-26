@@ -19,10 +19,10 @@
         },
         "seed": 0,
         "training": {
-            "batch_size": 512,
+            "batch_size": 200,
             "eval_batch_size": 181,
             "lr": 0.1,
-            "n_epochs": 2000,
+            "n_epochs": 500,
             "optimizer": "adamw",
             "patience": 50,
             "weight_decay": 1e-05
@@ -40,22 +40,22 @@
             }
         }
     },
-    "epoch_size": 9,
+    "epoch_size": 21,
     "n_parameters": 135327,
-    "best_epoch": 47,
+    "best_epoch": 23,
     "metrics": {
         "train": {
-            "rmse": 0.5090549813648712,
-            "score": -0.5090549813648712
+            "rmse": 0.5090454413746917,
+            "score": -0.5090454413746917
         },
         "val": {
-            "rmse": 0.4928818603777871,
-            "score": -0.4928818603777871
+            "rmse": 0.49288154758603064,
+            "score": -0.49288154758603064
         },
         "test": {
-            "rmse": 0.4349343276632362,
-            "score": -0.4349343276632362
+            "rmse": 0.4349308361613301,
+            "score": -0.4349308361613301
         }
     },
-    "time": "0:00:06"
+    "time": "0:00:08"
 }

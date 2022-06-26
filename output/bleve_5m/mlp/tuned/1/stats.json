@@ -9,18 +9,20 @@
         },
         "model": {
             "d_layers": [
+                11,
                 256,
                 256,
-                256
+                256,
+                1
             ],
             "dropout": 0.1
         },
         "seed": 1,
         "training": {
             "batch_size": 512,
-            "eval_batch_size": 256,
+            "eval_batch_size": 149,
             "lr": 0.1,
-            "n_epochs": 500,
+            "n_epochs": 700,
             "optimizer": "adamw",
             "patience": 50,
             "weight_decay": 1e-05
@@ -39,20 +41,20 @@
         }
     },
     "epoch_size": 2,
-    "n_parameters": 134913,
-    "best_epoch": 41,
+    "n_parameters": 135047,
+    "best_epoch": 2,
     "metrics": {
         "train": {
-            "rmse": 0.7991911957341635,
-            "score": -0.7991911957341635
+            "rmse": 0.9771920380413361,
+            "score": -0.9771920380413361
         },
         "val": {
-            "rmse": 0.8201769917371168,
-            "score": -0.8201769917371168
+            "rmse": 0.9861407091330826,
+            "score": -0.9861407091330826
         },
         "test": {
-            "rmse": 0.73736341626144,
-            "score": -0.73736341626144
+            "rmse": 0.9262808297756606,
+            "score": -0.9262808297756606
         }
     },
     "time": "0:00:01"
