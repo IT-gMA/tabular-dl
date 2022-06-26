@@ -56,9 +56,14 @@ def save_npy(N_train, N_val, N_test, y_train, y_val, y_test):
 if __name__ == '__main__':
     features, outputs = read_and_convert()
 
-    # 80% used for training, 15% for validation and 5% for testing
-    ratio = (0.70, 0.15, 0.15)
+    # 70% used for training, 15% for validation and 15% for testing
+    num_train = 0.70
+    num_val = 0.15
+    num_test = 0.15
+    ratio = (num_train, num_val, num_test)
     N_train, N_val, N_test, y_train, y_val, y_test = training_split(features, outputs, ratio)
+    print("train {}:{}\nvalidation {}:{}\ntest {}:{}".format(num_train * 100, N_train, num_val * 100, N_val,
+                                                             num_test * 100, N_test))
 
     # Save the samples as .npy files
     save_npy(N_train, N_val, N_test, y_train, y_val, y_test)
