@@ -121,6 +121,8 @@ epoch_size = stats['epoch_size'] = math.ceil(train_size / batch_size)
 #new loss function with mse or mish
 loss_fn = (
     F.mish
+    if D.is_binclass
+    else F.mse_loss
 )
 
 args['model'].setdefault('d_embedding', None)
