@@ -4,7 +4,7 @@ import os
 import sys
 
 EXCEL_DATA = '../BLEVE_data/BLEVE_data_5m.xlsx'  # Given this data has been randomised beforehand
-SAVE_DIR = '../data/bleve'
+SAVE_DIR = '../data/bleve_5m'
 
 
 def read_and_convert():
@@ -27,7 +27,7 @@ def read_and_convert():
     return features_arr, outputs_arr
 
 
-def training_split(features, outputs, ratio=(0.80, 0.15, 0.05)):
+def training_split(features, outputs, ratio=(0.70, 0.15, 0.15)):
     num_samples = outputs.shape[0]
     num_train = int(num_samples * ratio[0])
     num_val = int(num_samples * ratio[1])
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     features, outputs = read_and_convert()
 
     # 80% used for training, 15% for validation and 5% for testing
-    ratio = (0.80, 0.15, 0.05)
+    ratio = (0.70, 0.15, 0.15)
     N_train, N_val, N_test, y_train, y_val, y_test = training_split(features, outputs, ratio)
 
     # Save the samples as .npy files
