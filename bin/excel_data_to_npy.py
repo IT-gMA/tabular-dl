@@ -58,8 +58,8 @@ if __name__ == '__main__':
 
     # 70% used for training, 15% for validation and 15% for testing
     num_train = 0.70
-    num_val = 0.1503
-    num_test = 0.1497
+    num_val = 0.151
+    num_test = 0.149
     ratio = (num_train, num_val, num_test)
     N_train, N_val, N_test, y_train, y_val, y_test = training_split(features, outputs, ratio)
     print("train {}:{}\nvalidation {}:{}\ntest {}:{}".format(num_train * 100, len(N_train), num_val * 100, len(N_val),
