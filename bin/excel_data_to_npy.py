@@ -3,8 +3,8 @@ import pandas as pd
 import os
 import sys
 
-EXCEL_DATA = '../BLEVE_data/BLEVE_data_5m.xlsx'  # Given this data has been randomised beforehand
-SAVE_DIR = '../data/bleve_5m'
+EXCEL_DATA = '../BLEVE_data/BLEVE_data_shuffled.xlsx'  # Given this data has been randomised beforehand
+SAVE_DIR = '../data/bleve'
 
 
 def read_and_convert():
