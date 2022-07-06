@@ -19,11 +19,11 @@
         },
         "seed": 10,
         "training": {
-            "batch_size": 839,
-            "eval_batch_size": 181,
-            "lr": 0.1,
-            "n_epochs": 4195,
-            "optimizer": "adamw",
+            "batch_size": 512,
+            "eval_batch_size": 512,
+            "lr": 0.001,
+            "n_epochs": 500,
+            "optimizer": "sgd",
             "patience": 50,
             "weight_decay": 1e-05
         }
@@ -33,28 +33,31 @@
             "CUDA_VISIBLE_DEVICES": "0",
             "torch.version.cuda": "10.2",
             "torch.backends.cudnn.version()": 7605,
-            "driver": "512.95",
+            "driver": "516.59",
             "0": {
                 "name": "NVIDIA GeForce RTX 2070",
                 "total_memory": 8589934592
             }
         }
     },
-    "epoch_size": 5,
+    "epoch_size": 9,
     "n_parameters": 135327,
-    "best_epoch": 17,
+    "best_epoch": 25,
     "metrics": {
         "train": {
-            "rmse": 0.5086357193551483,
-            "score": -0.5086357193551483
+            "rmse": 0.5089648137455027,
+            "score": -0.5089648137455027,
+            "mape": 1.139237642288208
         },
         "val": {
-            "rmse": 0.49306881177484885,
-            "score": -0.49306881177484885
+            "rmse": 0.4928830333451056,
+            "score": -0.4928830333451056,
+            "mape": 1.3212896585464478
         },
         "test": {
-            "rmse": 0.43494012314005864,
-            "score": -0.43494012314005864
+            "rmse": 0.4349043033757095,
+            "score": -0.4349043033757095,
+            "mape": 1.062340259552002
         }
     },
     "time": "0:00:04"
