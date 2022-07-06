@@ -17,12 +17,18 @@ def calculate_metrics(
     if task_type == util.REGRESSION:
         del classification_mode
         rmse = skm.mean_squared_error(y, prediction) ** 0.5  # type: ignore[code]
+
+        # compute mean absolute percentage error in float64 (instead of 32)
+        mape = skm.mean_absolute_percentage_error(y, prediction)
+        mape = np.float64(mape)
+
         if y_info:
             if y_info['policy'] == 'mean_std':
                 rmse *= y_info['std']
             else:
                 assert False
-        return {'rmse': rmse, 'score': -rmse}
+
+        return {'rmse': rmse, 'score': -rmse, 'mape': mape}
     else:
         assert task_type in (util.BINCLASS, util.MULTICLASS)
         labels = None
