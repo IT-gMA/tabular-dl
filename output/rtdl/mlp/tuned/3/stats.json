@@ -1,0 +1,61 @@
+{
+    "dataset": "rtdl",
+    "algorithm": "mlp",
+    "config": {
+        "data": {
+            "normalization": "quantile",
+            "path": "data/rtdl",
+            "y_policy": "mean_std"
+        },
+        "model": {
+            "d_layers": [
+                11,
+                256,
+                256,
+                256,
+                1
+            ],
+            "dropout": 0.1
+        },
+        "seed": 3,
+        "training": {
+            "batch_size": 512,
+            "eval_batch_size": 512,
+            "lr": 0.001,
+            "n_epochs": 500,
+            "optimizer": "sgd",
+            "patience": 50,
+            "weight_decay": 1e-05
+        }
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "driver": "516.59",
+            "0": {
+                "name": "NVIDIA GeForce RTX 2070",
+                "total_memory": 8589934592
+            }
+        }
+    },
+    "epoch_size": 58,
+    "n_parameters": 135047,
+    "best_epoch": 9,
+    "metrics": {
+        "train": {
+            "rmse": 0.2191797087913983,
+            "score": -0.2191797087913983
+        },
+        "val": {
+            "rmse": 0.20284355906142207,
+            "score": -0.20284355906142207
+        },
+        "test": {
+            "rmse": 0.19465626304333736,
+            "score": -0.19465626304333736
+        }
+    },
+    "time": "0:00:19"
+}
