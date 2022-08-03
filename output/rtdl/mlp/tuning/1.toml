@@ -4,9 +4,9 @@ program = 'bin/mlp.py'
 seed = 1
 
     [base_config.data]
-    normalization = 'quantile'
+    normalization = 'standard'
     path = 'data/rtdl'
-    y_policy = 'mean_std'
+    y_policy = 'quatntile'
 
     [base_config.model]
     [base_config.training]
@@ -20,10 +20,10 @@ seed = 1
 n_trials = 1000
 
 [optimization.sampler]
-seed = 0
+seed = 1
 
 [optimization.space.model]
-d_layers = [ '$mlp_d_layers', 1, 16, 1, 1024 ]
+d_layers = [ '$mlp_d_layers', 1, 8, 1, 1024 ]
 dropout = [ '?uniform', 0.0, 0.0, 0.5 ]
 
 [optimization.space.training]

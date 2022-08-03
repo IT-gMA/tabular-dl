@@ -1,11 +1,13 @@
-program = 'bin/mlp.py'
+# Change the mlp.py file path here
+program = '/Users/naga/Library/Mobile Documents/com~apple~CloudDocs/Uni stuff/2022 sem1/NPSC4001/tabular-dl-revisiting-models/bin/mlp.py'
 
 [base_config]
 seed = 2
 
     [base_config.data]
     normalization = 'standard'
-    path = 'data/rtdl'
+    # Change the data directory path here
+    path = '/Users/naga/Library/Mobile Documents/com~apple~CloudDocs/Uni stuff/2022 sem1/NPSC4001/tabular-dl-revisiting-models/data/rtdl'
     y_policy = 'mean_std'
 
     [base_config.model]
@@ -13,17 +15,17 @@ seed = 2
     batch_size = 1024
     eval_batch_size = 8192
     n_epochs = 100000000
-    optimizer = 'sgd'
+    optimizer = 'adamw'
     patience = 16
 
 [optimization.options]
 n_trials = 200
 
 [optimization.sampler]
-seed = 0
+seed = 2
 
 [optimization.space.model]
-d_layers = [ '$mlp_d_layers', 1, 8, 1, 512 ]
+d_layers = [ '$mlp_d_layers', 1, 4, 1, 512 ]
 dropout = [ '?uniform', 0.0, 0.0, 0.5 ]
 
 [optimization.space.training]

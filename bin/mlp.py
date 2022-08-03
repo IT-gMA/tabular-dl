@@ -8,7 +8,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import zero
-import torch.optim as optim
 
 import lib
 
@@ -114,19 +113,21 @@ train_size = D.size(lib.TRAIN)
 batch_size = args['training']['batch_size']
 epoch_size = stats['epoch_size'] = math.ceil(train_size / batch_size)
 
-'''loss_fn = (
-    F.binary_cross_entropy_with_logits
+loss_fn = (
+    #F.binary_cross_entropy_with_logits
+    F.mse_loss
     if D.is_binclass
     else F.cross_entropy
     if D.is_multiclass
     else F.mse_loss
-)'''
+)
+
 #new loss function with mse or mish
-loss_fn = (
+'''loss_fn = (
     F.mish
     if D.is_binclass
     else F.mse_loss
-)
+)'''
 
 args['model'].setdefault('d_embedding', None)
 model = MLP(
