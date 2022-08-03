@@ -6,7 +6,7 @@ seed = 0
     [base_config.data]
     normalization = 'standard'
     path = 'data/rtdl'
-    y_policy = 'quantile_mean_std'
+    y_policy = 'mean_std'
 
     [base_config.model]
     [base_config.training]
