@@ -12,18 +12,18 @@ seed = 2
     [base_config.training]
     batch_size = 1024
     eval_batch_size = 8192
-    n_epochs = 1000000000
+    n_epochs = 100000000
     optimizer = 'sgd'
     patience = 16
 
 [optimization.options]
-n_trials = 1000
+n_trials = 200
 
 [optimization.sampler]
 seed = 0
 
 [optimization.space.model]
-d_layers = [ '$mlp_d_layers', 1, 16, 1, 1024 ]
+d_layers = [ '$mlp_d_layers', 1, 8, 1, 512 ]
 dropout = [ '?uniform', 0.0, 0.0, 0.5 ]
 
 [optimization.space.training]
