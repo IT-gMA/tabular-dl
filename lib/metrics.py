@@ -23,7 +23,7 @@ def calculate_metrics(
         mape = np.float64(mape)
 
         if y_info:
-            if y_info['policy'] == 'mean_std':
+            if y_info['policy'] == 'mean_std' or y_info['policy'] == 'mean_std_quantile' or y_info['policy'] == 'quantile_mean_std':
                 rmse *= y_info['std']
             else:
                 assert False

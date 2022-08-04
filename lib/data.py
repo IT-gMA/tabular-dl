@@ -228,8 +228,9 @@ class Dataset:
     def build_y(
         self, policy: ty.Optional[str]
     ) -> ty.Tuple[ArrayDict, ty.Optional[ty.Dict[str, ty.Any]]]:
-        if self.is_regression:
-            assert policy == 'mean_std'
+        # Allow for quantile_mean_std
+        '''if self.is_regression:
+            assert policy == 'mean_std'''
         y = deepcopy(self.y)
         if policy:
             if not self.is_regression:
@@ -239,6 +240,19 @@ class Dataset:
                 mean, std = self.y['train'].mean(), self.y['train'].std()
                 y = {k: (v - mean) / std for k, v in y.items()}
                 info = {'policy': policy, 'mean': mean, 'std': std}
+            elif policy == 'quantile_mean_std' or policy == 'mean_std_quantile':
+                # mean std and quantile (newly added code)
+                normalizer = sklearn.preprocessing.QuantileTransformer(
+                    output_distribution='normal',
+                    n_quantiles=max(min(y['train'].shape[0] // 30, 1000), 10),
+                    subsample=1e9,
+                    random_state=0,
+                )
+                normalizer.fit(y['train'].reshape(-1, 1))  # normalizer takes 2d array
+                y = {k: np.squeeze(normalizer.transform(v.reshape(-1, 1))) for k, v in y.items()}
+                mean, std = self.y['train'].mean(), self.y['train'].std()
+                y = {k: (v - mean) / std for k, v in y.items()}
+                info = {'policy': policy, 'normalizer': normalizer, 'mean': mean, 'std': std}
             else:
                 util.raise_unknown('y policy', policy)
         else:
