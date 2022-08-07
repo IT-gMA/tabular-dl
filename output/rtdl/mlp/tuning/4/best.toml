@@ -1,0 +1,19 @@
+seed = 4
+
+[data]
+normalization = 'standard'
+path = 'data/rtdl'
+y_policy = 'quantile_mean_std'
+
+[model]
+d_layers = [ 477, 550 ]
+dropout = 0.12530683167660533
+
+[training]
+batch_size = 2056
+eval_batch_size = 8192
+lr = 0.0099180673429568
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 0.0

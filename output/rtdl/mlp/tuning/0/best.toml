@@ -1,0 +1,19 @@
+seed = 0
+
+[data]
+normalization = 'standard'
+path = 'data/rtdl'
+y_policy = 'mean_std'
+
+[model]
+d_layers = [ 463, 189, 186 ]
+dropout = 0.0
+
+[training]
+batch_size = 1024
+eval_batch_size = 8192
+lr = 0.00995295226666109
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 1.3976860844210786e-05

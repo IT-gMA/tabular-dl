@@ -1,0 +1,135 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "normalization": "quantile",
+                "path": "data/rtdl",
+                "y_policy": "quantile_mean_std"
+            },
+            "model": {},
+            "seed": 5,
+            "training": {
+                "batch_size": 1024,
+                "eval_batch_size": 3072,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16
+            }
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 1000
+            },
+            "sampler": {
+                "seed": 5
+            },
+            "space": {
+                "model": {
+                    "d_layers": [
+                        "$mlp_d_layers",
+                        1,
+                        8,
+                        1,
+                        1024
+                    ],
+                    "dropout": [
+                        "?uniform",
+                        0.0,
+                        0.0,
+                        0.5
+                    ]
+                },
+                "training": {
+                    "lr": [
+                        "loguniform",
+                        1e-05,
+                        0.01
+                    ],
+                    "weight_decay": [
+                        "?loguniform",
+                        0.0,
+                        1e-06,
+                        0.001
+                    ]
+                }
+            }
+        },
+        "program": "bin/mlp.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "driver": "516.59",
+            "0": {
+                "name": "NVIDIA GeForce RTX 2070",
+                "total_memory": 8589934592
+            }
+        }
+    },
+    "best_stats": {
+        "dataset": "rtdl",
+        "algorithm": "mlp",
+        "config": {
+            "data": {
+                "normalization": "quantile",
+                "path": "data/rtdl",
+                "y_policy": "quantile_mean_std"
+            },
+            "model": {
+                "d_layers": [
+                    555,
+                    452
+                ],
+                "dropout": 0.30467988796625145
+            },
+            "seed": 5,
+            "training": {
+                "batch_size": 1024,
+                "eval_batch_size": 3072,
+                "lr": 0.0015113943252720457,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16,
+                "weight_decay": 8.254220369922147e-05
+            }
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "torch.version.cuda": "10.2",
+                "torch.backends.cudnn.version()": 7605,
+                "driver": "516.59",
+                "0": {
+                    "name": "NVIDIA GeForce RTX 2070",
+                    "total_memory": 8589934592
+                }
+            }
+        },
+        "epoch_size": 29,
+        "n_parameters": 258425,
+        "best_epoch": 131,
+        "metrics": {
+            "train": {
+                "rmse": 0.031629443499196754,
+                "score": -0.031629443499196754,
+                "mape": 0.12036199122667313
+            },
+            "val": {
+                "rmse": 0.07893180075262062,
+                "score": -0.07893180075262062,
+                "mape": 0.3224666714668274
+            },
+            "test": {
+                "rmse": 0.07262165637788144,
+                "score": -0.07262165637788144,
+                "mape": 0.2797967493534088
+            }
+        },
+        "time": "0:01:04",
+        "trial_id": 766,
+        "tuning_time": "10:33:35"
+    },
+    "time": "13:37:18"
+}
