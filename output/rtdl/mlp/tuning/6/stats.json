@@ -1,0 +1,144 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "normalization": "standard",
+                "path": "data/rtdl",
+                "y_policy": "quantile_mean_std"
+            },
+            "model": {
+                "activation": "relu"
+            },
+            "seed": 6,
+            "training": {
+                "batch_size": 512,
+                "eval_batch_size": 8192,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16
+            }
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 200
+            },
+            "sampler": {
+                "seed": 6
+            },
+            "space": {
+                "model": {
+                    "d_layers": [
+                        "$mlp_d_layers",
+                        1,
+                        5,
+                        1,
+                        512
+                    ],
+                    "dropout": [
+                        "?uniform",
+                        0.0,
+                        0.0,
+                        0.5
+                    ]
+                },
+                "training": {
+                    "lr": [
+                        "loguniform",
+                        1e-05,
+                        0.01
+                    ],
+                    "weight_decay": [
+                        "?loguniform",
+                        0.0,
+                        1e-06,
+                        0.001
+                    ]
+                }
+            }
+        },
+        "program": "bin/mlp.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "driver": "516.59",
+            "0": {
+                "name": "NVIDIA GeForce RTX 2070",
+                "total_memory": 8589934592
+            }
+        }
+    },
+    "best_stats": {
+        "dataset": "rtdl",
+        "algorithm": "mlp",
+        "config": {
+            "data": {
+                "normalization": "standard",
+                "path": "data/rtdl",
+                "y_policy": "quantile_mean_std"
+            },
+            "model": {
+                "activation": "relu",
+                "d_layers": [
+                    497,
+                    285
+                ],
+                "dropout": 0.08339138082703279
+            },
+            "seed": 6,
+            "training": {
+                "batch_size": 512,
+                "eval_batch_size": 8192,
+                "lr": 0.0033951665363333348,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16,
+                "weight_decay": 0.0
+            }
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "torch.version.cuda": "10.2",
+                "torch.backends.cudnn.version()": 7605,
+                "driver": "516.59",
+                "0": {
+                    "name": "NVIDIA GeForce RTX 2070",
+                    "total_memory": 8589934592
+                }
+            }
+        },
+        "epoch_size": 58,
+        "n_parameters": 148180,
+        "best_epoch": 57,
+        "metrics": {
+            "train": {
+                "mse": 0.0005767249967902899,
+                "rmse": 0.024015099349998324,
+                "score": -0.01837126538157463,
+                "mape": 0.01837126538157463,
+                "r2": 0.9943589754582612
+            },
+            "val": {
+                "mse": 0.0003728925948962569,
+                "rmse": 0.01931042710289591,
+                "score": -0.04513084515929222,
+                "mape": 0.04513084515929222,
+                "r2": 0.9960716467583303
+            },
+            "test": {
+                "mse": 0.0005226503708399832,
+                "rmse": 0.022861547866231263,
+                "score": -0.0456768162548542,
+                "mape": 0.0456768162548542,
+                "r2": 0.9940453820043624
+            }
+        },
+        "time": "0:00:28",
+        "trial_id": 74,
+        "tuning_time": "0:38:11"
+    },
+    "time": "1:41:40"
+}

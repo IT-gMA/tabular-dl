@@ -1,0 +1,20 @@
+seed = 6
+
+[data]
+normalization = 'standard'
+path = 'data/rtdl'
+y_policy = 'quantile_mean_std'
+
+[model]
+activation = 'relu'
+d_layers = [ 497, 285 ]
+dropout = 0.08339138082703279
+
+[training]
+batch_size = 512
+eval_batch_size = 8192
+lr = 0.0033951665363333348
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 0.0
