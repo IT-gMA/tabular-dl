@@ -3,28 +3,28 @@
     "algorithm": "mlp",
     "config": {
         "data": {
-            "normalization": "quantile",
+            "normalization": "standard",
             "path": "data/rtdl",
-            "y_policy": "mean_std"
+            "y_policy": "quantile_mean_std"
         },
         "model": {
+            "activation": "relu",
             "d_layers": [
-                11,
-                256,
-                256,
-                256
+                538,
+                347
             ],
-            "dropout": 0.1
+            "dropout": 0.2477008537587833
         },
         "seed": 9,
         "training": {
-            "batch_size": 512,
-            "eval_batch_size": 512,
-            "lr": 0.001,
-            "n_epochs": 500,
-            "optimizer": "radam",
-            "patience": 50,
-            "weight_decay": 1e-05
+            "batch_size": 1024,
+            "eval_batch_size": 8192,
+            "loss": "mse",
+            "lr": 0.0033808570389529695,
+            "n_epochs": 1000000000,
+            "optimizer": "adamw",
+            "patience": 16,
+            "weight_decay": 1.1067597759365375e-06
         }
     },
     "environment": {
@@ -39,25 +39,28 @@
             }
         }
     },
-    "epoch_size": 58,
-    "n_parameters": 135045,
-    "best_epoch": 108,
+    "epoch_size": 29,
+    "n_parameters": 193837,
+    "best_epoch": 60,
     "metrics": {
         "train": {
-            "rmse": 0.03830261525591358,
-            "score": -0.03830261525591358,
-            "mape": 0.7650226354598999
+            "mse": 0.0004982359241694212,
+            "rmse": 0.022321198985928627,
+            "score": -0.02363523468375206,
+            "mape": 0.02363523468375206
         },
         "val": {
-            "rmse": 0.04189077667500449,
-            "score": -0.04189077667500449,
-            "mape": 0.3683261275291443
+            "mse": 0.0006429366185329854,
+            "rmse": 0.025356194874881867,
+            "score": -0.045891329646110535,
+            "mape": 0.045891329646110535
         },
         "test": {
-            "rmse": 0.03898244652849423,
-            "score": -0.03898244652849423,
-            "mape": 0.37311607599258423
+            "mse": 0.0006636035395786166,
+            "rmse": 0.025760503480689517,
+            "score": -0.04377113655209541,
+            "mape": 0.04377113655209541
         }
     },
-    "time": "0:00:57"
+    "time": "0:00:35"
 }

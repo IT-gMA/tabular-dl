@@ -3,28 +3,28 @@
     "algorithm": "mlp",
     "config": {
         "data": {
-            "normalization": "quantile",
+            "normalization": "standard",
             "path": "data/rtdl",
-            "y_policy": "mean_std"
+            "y_policy": "quantile_mean_std"
         },
         "model": {
+            "activation": "relu",
             "d_layers": [
-                11,
-                256,
-                256,
-                256
+                538,
+                347
             ],
-            "dropout": 0.1
+            "dropout": 0.2477008537587833
         },
         "seed": 8,
         "training": {
-            "batch_size": 512,
-            "eval_batch_size": 512,
-            "lr": 0.001,
-            "n_epochs": 500,
-            "optimizer": "radam",
-            "patience": 50,
-            "weight_decay": 1e-05
+            "batch_size": 1024,
+            "eval_batch_size": 8192,
+            "loss": "mse",
+            "lr": 0.0033808570389529695,
+            "n_epochs": 1000000000,
+            "optimizer": "adamw",
+            "patience": 16,
+            "weight_decay": 1.1067597759365375e-06
         }
     },
     "environment": {
@@ -39,25 +39,28 @@
             }
         }
     },
-    "epoch_size": 58,
-    "n_parameters": 135045,
-    "best_epoch": 85,
+    "epoch_size": 29,
+    "n_parameters": 193837,
+    "best_epoch": 62,
     "metrics": {
         "train": {
-            "rmse": 0.04955874522662007,
-            "score": -0.04955874522662007,
-            "mape": 0.6230911016464233
+            "mse": 0.0005383416428230703,
+            "rmse": 0.023202190474674374,
+            "score": -0.02339158020913601,
+            "mape": 0.02339158020913601
         },
         "val": {
-            "rmse": 0.0501385543462043,
-            "score": -0.0501385543462043,
-            "mape": 0.5711653828620911
+            "mse": 0.0005925329751335084,
+            "rmse": 0.024342000228689268,
+            "score": -0.04563421010971069,
+            "mape": 0.04563421010971069
         },
         "test": {
-            "rmse": 0.047986915166812666,
-            "score": -0.047986915166812666,
-            "mape": 0.40699127316474915
+            "mse": 0.0006337915547192097,
+            "rmse": 0.0251752170739243,
+            "score": -0.04505759850144386,
+            "mape": 0.04505759850144386
         }
     },
-    "time": "0:00:51"
+    "time": "0:00:42"
 }
