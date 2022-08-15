@@ -2,14 +2,16 @@
     "config": {
         "base_config": {
             "data": {
-                "normalization": "standard",
+                "normalization": "quantile",
                 "path": "data/rtdl",
                 "y_policy": "mean_std"
             },
-            "model": {},
+            "model": {
+                "activation": "mish"
+            },
             "seed": 0,
             "training": {
-                "batch_size": 1024,
+                "batch_size": 256,
                 "eval_batch_size": 8192,
                 "n_epochs": 1000000000,
                 "optimizer": "adamw",
@@ -28,7 +30,7 @@
                     "d_layers": [
                         "$mlp_d_layers",
                         1,
-                        16,
+                        4,
                         1,
                         1024
                     ],
@@ -68,32 +70,38 @@
             }
         }
     },
+    "continuations": [
+        11,
+        446
+    ],
     "best_stats": {
         "dataset": "rtdl",
         "algorithm": "mlp",
         "config": {
             "data": {
-                "normalization": "standard",
+                "normalization": "quantile",
                 "path": "data/rtdl",
                 "y_policy": "mean_std"
             },
             "model": {
+                "activation": "mish",
                 "d_layers": [
-                    463,
-                    189,
-                    186
+                    699,
+                    827,
+                    827,
+                    38
                 ],
                 "dropout": 0.0
             },
             "seed": 0,
             "training": {
-                "batch_size": 1024,
+                "batch_size": 256,
                 "eval_batch_size": 8192,
-                "lr": 0.00995295226666109,
+                "lr": 0.0008797255591831995,
                 "n_epochs": 1000000000,
                 "optimizer": "adamw",
                 "patience": 16,
-                "weight_decay": 1.3976860844210786e-05
+                "weight_decay": 0.0
             }
         },
         "environment": {
@@ -108,29 +116,32 @@
                 }
             }
         },
-        "epoch_size": 29,
-        "n_parameters": 128779,
-        "best_epoch": 101,
+        "epoch_size": 115,
+        "n_parameters": 1303547,
+        "best_epoch": 74,
         "metrics": {
             "train": {
-                "rmse": 0.012617913120877181,
-                "score": -0.012617913120877181,
-                "mape": 0.41038569808006287
+                "mse": 3.340924740768969e-05,
+                "rmse": 0.005780073304698626,
+                "score": -0.019491134211421013,
+                "mape": 0.019491134211421013
             },
             "val": {
-                "rmse": 0.01831078394230412,
-                "score": -0.01831078394230412,
-                "mape": 0.33108749985694885
+                "mse": 0.00023286593204829842,
+                "rmse": 0.015259945348797892,
+                "score": -0.04869833216071129,
+                "mape": 0.04869833216071129
             },
             "test": {
-                "rmse": 0.022669354026398806,
-                "score": -0.022669354026398806,
-                "mape": 0.3055107891559601
+                "mse": 0.0002668789238668978,
+                "rmse": 0.016336429348756044,
+                "score": -0.04773657023906708,
+                "mape": 0.04773657023906708
             }
         },
-        "time": "0:00:32",
-        "trial_id": 896,
-        "tuning_time": "10:47:36"
+        "time": "0:03:31",
+        "trial_id": 802,
+        "tuning_time": "1 day, 0:47:35"
     },
-    "time": "11:42:14"
+    "time": "1 day, 7:18:28"
 }

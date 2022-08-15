@@ -1,4 +1,4 @@
-seed = 0
+seed = 1
 
 [data]
 normalization = 'quantile'
@@ -6,15 +6,14 @@ path = 'data/rtdl'
 y_policy = 'mean_std'
 
 [model]
-activation = 'mish'
-d_layers = [ 699, 827, 827, 38 ]
+d_layers = [ 914, 876, 342 ]
 dropout = 0.0
 
 [training]
-batch_size = 256
+batch_size = 1024
 eval_batch_size = 8192
-lr = 0.0008797255591831995
+lr = 0.0076352189533948
 n_epochs = 1000000000
-optimizer = 'adamw'
+optimizer = 'radam'
 patience = 16
 weight_decay = 0.0

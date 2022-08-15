@@ -4,13 +4,15 @@ program = 'bin/mlp.py'
 seed = 0
 
     [base_config.data]
-    normalization = 'standard'
+    normalization = 'quantile'
     path = 'data/rtdl'
     y_policy = 'mean_std'
 
     [base_config.model]
+    activation = 'mish'
+
     [base_config.training]
-    batch_size = 1024
+    batch_size = 256
     eval_batch_size = 8192
     n_epochs = 1000000000
     optimizer = 'adamw'
@@ -23,7 +25,7 @@ n_trials = 1000
 seed = 0
 
 [optimization.space.model]
-d_layers = [ '$mlp_d_layers', 1, 16, 1, 1024 ]
+d_layers = [ '$mlp_d_layers', 1, 4, 1, 1024 ]
 dropout = [ '?uniform', 0.0, 0.0, 0.5 ]
 
 [optimization.space.training]

@@ -2,33 +2,36 @@
     "config": {
         "base_config": {
             "data": {
-                "normalization": "quantile",
+                "normalization": "standard",
                 "path": "data/rtdl",
-                "y_policy": "mean_std"
+                "y_policy": "quantile_mean_std"
             },
-            "model": {},
-            "seed": 1,
+            "model": {
+                "activation": "relu"
+            },
+            "seed": 7,
             "training": {
                 "batch_size": 1024,
                 "eval_batch_size": 8192,
+                "loss": "mse",
                 "n_epochs": 1000000000,
-                "optimizer": "radam",
+                "optimizer": "adamw",
                 "patience": 16
             }
         },
         "optimization": {
             "options": {
-                "n_trials": 1000
+                "n_trials": 1500
             },
             "sampler": {
-                "seed": 1
+                "seed": 7
             },
             "space": {
                 "model": {
                     "d_layers": [
                         "$mlp_d_layers",
                         1,
-                        8,
+                        6,
                         1,
                         1024
                     ],
@@ -68,36 +71,33 @@
             }
         }
     },
-    "continuations": [
-        643,
-        655
-    ],
     "best_stats": {
         "dataset": "rtdl",
         "algorithm": "mlp",
         "config": {
             "data": {
-                "normalization": "quantile",
+                "normalization": "standard",
                 "path": "data/rtdl",
-                "y_policy": "mean_std"
+                "y_policy": "quantile_mean_std"
             },
             "model": {
+                "activation": "relu",
                 "d_layers": [
-                    914,
-                    876,
-                    342
+                    538,
+                    347
                 ],
-                "dropout": 0.0
+                "dropout": 0.2477008537587833
             },
-            "seed": 1,
+            "seed": 7,
             "training": {
                 "batch_size": 1024,
                 "eval_batch_size": 8192,
-                "lr": 0.0076352189533948,
+                "loss": "mse",
+                "lr": 0.0033808570389529695,
                 "n_epochs": 1000000000,
-                "optimizer": "radam",
+                "optimizer": "adamw",
                 "patience": 16,
-                "weight_decay": 0.0
+                "weight_decay": 1.1067597759365375e-06
             }
         },
         "environment": {
@@ -113,28 +113,31 @@
             }
         },
         "epoch_size": 29,
-        "n_parameters": 1112785,
-        "best_epoch": 159,
+        "n_parameters": 193837,
+        "best_epoch": 100,
         "metrics": {
             "train": {
-                "rmse": 0.0051975444514388595,
-                "score": -0.0051975444514388595,
-                "mape": 0.2278626561164856
+                "mse": 0.0005074293003417552,
+                "rmse": 0.02252619143001664,
+                "score": -0.02248576655983925,
+                "mape": 0.02248576655983925
             },
             "val": {
-                "rmse": 0.01964036459572853,
-                "score": -0.01964036459572853,
-                "mape": 0.33103853464126587
+                "mse": 0.0006735467468388379,
+                "rmse": 0.02595277917370003,
+                "score": -0.04340808838605881,
+                "mape": 0.04340808838605881
             },
             "test": {
-                "rmse": 0.018802046027770986,
-                "score": -0.018802046027770986,
-                "mape": 0.19913683831691742
+                "mse": 0.0006993511924520135,
+                "rmse": 0.026445248958026725,
+                "score": -0.044593170285224915,
+                "mape": 0.044593170285224915
             }
         },
-        "time": "0:03:06",
-        "trial_id": 558,
-        "tuning_time": "13:18:47"
+        "time": "0:00:45",
+        "trial_id": 1365,
+        "tuning_time": "18:56:06"
     },
-    "time": "22:10:47"
+    "time": "20:42:44"
 }

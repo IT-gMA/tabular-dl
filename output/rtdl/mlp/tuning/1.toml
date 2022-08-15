@@ -4,16 +4,16 @@ program = 'bin/mlp.py'
 seed = 1
 
     [base_config.data]
-    normalization = 'standard'
+    normalization = 'quantile'
     path = 'data/rtdl'
-    y_policy = 'quatntile'
+    y_policy = 'mean_std'
 
     [base_config.model]
     [base_config.training]
-    batch_size = 1024
+    batch_size = 2056
     eval_batch_size = 8192
     n_epochs = 1000000000
-    optimizer = 'adamw'
+    optimizer = 'radam'
     patience = 16
 
 [optimization.options]

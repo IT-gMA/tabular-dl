@@ -12,20 +12,20 @@ seed = 4
 
     [base_config.model]
     [base_config.training]
-    batch_size = 1024
-    eval_batch_size = 3072
+    batch_size = 2056
+    eval_batch_size = 8192
     n_epochs = 1000000000
-    optimizer = 'radam'
+    optimizer = 'adamw'
     patience = 16
 
 [optimization.options]
-n_trials = 1000
+n_trials = 1500
 
 [optimization.sampler]
 seed = 4
 
 [optimization.space.model]
-d_layers = [ '$mlp_d_layers', 1, 4, 1, 1024 ]
+d_layers = [ '$mlp_d_layers', 1, 6, 1, 1024 ]
 dropout = [ '?uniform', 0.0, 0.0, 0.5 ]
 
 [optimization.space.training]
